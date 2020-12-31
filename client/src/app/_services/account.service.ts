@@ -40,7 +40,7 @@ export class AccountService {
     );
   }
 
-  setCurrentUser(user: User){
+  setCurrentUser(user: User) {
     user.roles = [];
     const roles = this.getDecodedToken(user.token).role;
     Array.isArray(roles) ? user.roles = roles : user.roles.push(roles);
